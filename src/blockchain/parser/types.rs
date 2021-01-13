@@ -25,6 +25,7 @@ pub struct Litecoin;
 pub struct Dogecoin;
 pub struct Myriadcoin;
 pub struct Unobtanium;
+pub struct DEFIChain;
 //pub struct Dash;
 
 impl Coin for Bitcoin {
@@ -165,6 +166,26 @@ impl Coin for Unobtanium {
     }
     fn default_folder(&self) -> PathBuf {
         Path::new(".unobtanium").join("blocks")
+    }
+}
+
+impl Coin for DEFIChain {
+    fn name(&self) -> String {
+        String::from("DEFIChain")
+    }
+    fn magic(&self) -> u32 {
+        F9BEB4D9
+    }
+    fn version_id(&self) -> u8 {
+        0x76
+    }
+    fn genesis(&self) -> [u8; 32] {
+        utils::hex_to_arr32_swapped(
+            "279b1a87aedc7b9471d4ad4e5f12967ab6259926cd097ade188dfcf22ebfe72a",
+        )
+    }
+    fn default_folder(&self) -> PathBuf {
+        Path::new(".defi").join("blocks")
     }
 }
 
