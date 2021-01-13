@@ -237,6 +237,7 @@ impl FromStr for CoinType {
             "dogecoin" => Ok(CoinType::from(Dogecoin)),
             "myriadcoin" => Ok(CoinType::from(Myriadcoin)),
             "unobtanium" => Ok(CoinType::from(Unobtanium)),
+            "DEFIChain" => Ok(CoinType::from(DEFIChain)),
             n => {
                 let e = OpError::new(OpErrorKind::InvalidArgsError)
                     .join_msg(&format!("The is no impl for `{}`!", n));
