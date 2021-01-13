@@ -174,7 +174,7 @@ impl Coin for DEFIChain {
         String::from("DEFIChain")
     }
     fn magic(&self) -> u32 {
-        F9BEB4D9
+        0xF9BEB4D9
     }
     fn version_id(&self) -> u8 {
         0x76
